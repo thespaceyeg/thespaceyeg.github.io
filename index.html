@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        html{
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        h1{
+            color: goldenrod;
+            font-size: 40px;
+       
+        }
+        
+        h3{
+            color:  rgb(136, 31, 31);
+            font-size: 25px;
+        }
+
+        h4{
+            color: goldenrod;
+        }
+        
+        h5{
+           font-size: 15px;  
+        }
+
+        #countdown{
+            color: green;
+            font-size: larger;
+        }
+    </style>
+    
+  <head>
+    <title>The Secret After Party</title>
+  </head>
+  <body>
+    <h1>The Secret After Party</h1>
+    <h2>Music Performances by:</h2>
+    <h3>Carter &amp; The Capitals, DSL, Kaeley Jade, J Scope &amp; MORE!</h3>
+    <h2>Hosted By UnderEasy</h2>
+    <h4>Juno's Weekend Friday & Saturday</h4>
+    <h4>Brighton Block 9666 Jasper Ave</h4>
+    <h5>Free Entry. Back Alley Door.</h5>
+
+    <p id="countdown"></p>
+    <script>
+      // Set the date we're counting down to
+      var countDownDate = new Date("March 10, 2023 23:00:00 MST").getTime();
+
+      // Update the countdown every second
+      var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Calculate the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the countdown in the element with id="countdown"
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+
+        // If the countdown is finished, display a message
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("countdown").innerHTML = "PARTY IS ON!";
+        }
+      }, 1000);
+    </script>
+
+<h5 style="font-size: larger;">Dj's throughout the night!</h5>
+
+  </body>
+</html>
